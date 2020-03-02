@@ -40,7 +40,7 @@ Try changing the weights from 0.1 to 1 -- Values above 1.5 tend to get a bit mes
 
 
 
-### I have used and modified code in parts of this project under the following license
+### I have used and/or modified code in parts of this project under the following license
   
 >MIT License
 >
