@@ -1,6 +1,6 @@
-#Swarms
+# Swarms
 
-##Getting Started
+## Getting Started
 
 Download the zip file from the repository
 
@@ -18,7 +18,7 @@ Try running the simulation with the play button
 
 Check for compiler errors
 
-##Changing the Simulation
+## Changing the Simulation
 
 You can change the size of the box by increasing the scale components in the transform of the “Level” object.
 
@@ -40,7 +40,7 @@ Try changing the weights from 0.1 to 1 -- Values above 1.5 tend to get a bit mes
 
 
 
-###I have used and modified code in parts of this project under the following license
+### I have used and modified code in parts of this project under the following license
   
 >MIT License
 >
