@@ -20,6 +20,7 @@ Check for compiler errors
 
 ## Changing the Simulation
 
+To change the amount of boids, click on the spawner object in the hierarchy and change "Number of boids" in the inspector.
 You can change the size of the box by increasing the scale components in the transform of the “Level” object.
 
 If you want to toggle the third person camera in the simulation, press the “Space” Key
