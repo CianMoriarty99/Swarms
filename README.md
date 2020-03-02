@@ -1,6 +1,46 @@
-# Swarms
+#Swarms
 
-I have used and modified code in parts of this project under the following license
+##Getting Started
+
+Download the zip file from the repository
+
+Extract it to a convenient location
+
+Download Version “2019.1.8f1” from the Hub
+
+“Add” project folder
+
+Open project.
+
+In the “Scenes” Folder, Open the X Scene
+
+Try running the simulation with the play button
+
+Check for compiler errors
+
+##Changing the Simulation
+
+You can change the size of the box by increasing the scale components in the transform of the “Level” object.
+
+If you want to toggle the third person camera in the simulation, press the “Space” Key
+(You can change this Key in CameraSwitch.cs)
+
+While the Sim is running, go into the Settings folder and click on settings
+
+In the top right you should see all the settings from the Scripts/Settings.cs file.
+
+Here you can change the parameters to see how the Boids behaviour changes
+What happens when you change the perception radius from 0.1 to 10?
+
+Note: If you set the Steer force to less than about 2 then they have trouble steering in time to avoid the walls and they’ll glitch through it - Anywhere from 4 - 6 is a good value.
+
+Interestingly, if you set the Steer force to a really high value then they start to slow down, what could be the reason for this?
+
+Try changing the weights from 0.1 to 1 -- Values above 1.5 tend to get a bit messy
+
+
+
+###I have used and modified code in parts of this project under the following license
   
 >MIT License
 >
