@@ -39,6 +39,7 @@ Interestingly, if you set the Steer force to a really high value then they start
 
 Try changing the weights from 0.1 to 1 - Values above 1.5 tend to get a bit messy
 
+If you would like to change things at the code level I've documented the code in Boids.cs and Settings.cs to help you better understand whats going on. I think these are the files that would be most useful to change.
 
 
 ### I have used and/or modified code in parts of this project under the following license
