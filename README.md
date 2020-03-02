@@ -30,13 +30,14 @@ While the Sim is running, go into the Settings folder and click on settings
 In the top right you should see all the settings from the Scripts/Settings.cs file.
 
 Here you can change the parameters to see how the Boids behaviour changes
+
 What happens when you change the perception radius from 0.1 to 10?
 
-Note: If you set the Steer force to less than about 2 then they have trouble steering in time to avoid the walls and they’ll glitch through it - Anywhere from 4 - 6 is a good value.
+Note: If you set the Steer force to less than about 2 then they have trouble steering in time to avoid the walls and they’ll glitch through it. Anywhere from 4 - 6 is a good value.
 
 Interestingly, if you set the Steer force to a really high value then they start to slow down, what could be the reason for this?
 
-Try changing the weights from 0.1 to 1 -- Values above 1.5 tend to get a bit messy
+Try changing the weights from 0.1 to 1 - Values above 1.5 tend to get a bit messy
 
 
 
