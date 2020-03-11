@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [CreateAssetMenu()]
 
 /*
@@ -11,7 +10,7 @@ starting settings without creating 50 new instances of the class.
 For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
 */
 
-public class Settings : ScriptableObject {
+public class PredatorSettings : ScriptableObject {
     // Boids Settings
     public float minimumSpeed = 3f; 
     public float maximumSpeed = 8f;

@@ -11,7 +11,7 @@ needs their own position, direction, velocity, etc.
 */
 
 /*
-BoidSettings is a "ScriptableObject" which allows each boid to obtain its 
+Settings is a "ScriptableObject" which allows each boid to obtain its 
 starting settings without creating 50 new instances of the class.
 For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
 */
@@ -30,13 +30,15 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
     public Material material; //this boids Material
     public Transform boidTransform; //We "Cache" the transform for optimisation
 
+    public bool predator;
+
     //Awake happens before anything
     void Awake () {
         material = transform.GetComponentInChildren<MeshRenderer>().material; //Get the material component of this boid
         boidTransform = transform; //Set the Cache
     }
 
-    //We can Initialize the boid with Settings from our BoidSettings Script
+    //We can Initialize the boid with Settings from our Settings Script
     public void Initialize (Settings settings) {
         this.settings = settings; //Get a new reference of the settings just for this boid
         position = boidTransform.position; //Initialize the start position
@@ -58,6 +60,7 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
         {
             this.material.color = Color.blue;
         }
+        if (predator) this.material.color = Color.yellow;
     }
 
     public void MoveBoid () {
@@ -156,6 +159,14 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
         //If somehow everything around it is an obstacle then just move forward
         //We just need this so that this function always returns something
         return forward;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Predator")
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
 
