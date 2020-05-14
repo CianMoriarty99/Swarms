@@ -30,7 +30,7 @@ While the Sim is running, go into the Settings folder and click on settings
 
 In the top right you should see all the settings from the Scripts/Settings.cs file.
 
-Here you can change the parameters to see how the Boids behaviour changes
+Here you can change the parameters to see how the FishBoids behaviour changes
 
 What happens when you change the perception radius from 0.1 to 10?
 
@@ -40,7 +40,7 @@ Interestingly, if you set the Steer force to a really high value then they start
 
 Try changing the weights from 0.1 to 1 - Values above 1.5 tend to get a bit messy
 
-If you would like to change things at the code level I've documented the code in Boids.cs and Settings.cs to help you better understand whats going on. I think these are the files that would be most useful to change.
+If you would like to change things at the code level I've documented the code in FishBoids.cs and Settings.cs to help you better understand whats going on. I think these are the files that would be most useful to change.
 
 
 ### I have used and/or modified code in parts of this project under the following license

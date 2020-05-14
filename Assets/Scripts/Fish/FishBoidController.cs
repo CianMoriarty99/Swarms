@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoidController : MonoBehaviour {
+public class FishBoidController : MonoBehaviour {
 
     const int threadGroupSize = 1024;
 
-    public Settings settings;
+    public FishSettings settings;
     public ComputeShader compute;
-    Boids[] boids;
+    FishBoids[] boids;
 
     void Start() {
-        boids = FindObjectsOfType<Boids>();
-        foreach (Boids b in boids) {
+        boids = FindObjectsOfType<FishBoids>();
+        foreach (FishBoids b in boids) {
             b.Initialize(settings);
         }
 

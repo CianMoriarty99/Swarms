@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boids : MonoBehaviour {
+public class FishBoids : MonoBehaviour {
 
 /*
 Each Boid (member of the swarm) will have this script attached to it
@@ -15,7 +15,7 @@ Settings is a "ScriptableObject" which allows each boid to obtain its
 starting settings without creating 50 new instances of the class.
 For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
 */
-    Settings settings;
+    FishSettings settings;
 
 //These are the values of the boid that update every frame
 
@@ -39,7 +39,7 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
     }
 
     //We can Initialize the boid with Settings from our Settings Script
-    public void Initialize (Settings settings) {
+    public void Initialize (FishSettings settings) {
         this.settings = settings; //Get a new reference of the settings just for this boid
         position = boidTransform.position; //Initialize the start position
         forward = boidTransform.forward; //Initialize the start direction
@@ -93,7 +93,6 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
 
         //Check whether the boid is heading for an obstacle
         if (HeadingForObstacle ()) {
-
             //if it is then get the closest direction that doesnt intersect with an obstacle
             Vector3 avoidCollisionRay = ObstacleDirections ();
             //And move towards that direction
@@ -101,26 +100,18 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
             acceleration += avoidCollisionForce;
         }
 
-        //Some physics equations
-        // V - m/s,  a - m/s^2, T - s
+
         velocity += acceleration * Time.deltaTime;
-
-        //Speed is the scalar of the velocity vector
         float speed = velocity.magnitude;
-        // 
         Vector3 direction = velocity / speed;
-
         //Make sure the speed doesn't exceed the min or max speeds
         speed = Mathf.Clamp (speed, settings.minimumSpeed, settings.maximumSpeed);
-        //Update the velocity to effectively clamp the velocity as well
         velocity = direction * speed;
+        
 
-        // X - m, V - m/s, T = s
+        //Update Boid variables
         boidTransform.position += velocity * Time.deltaTime;
-
-        //Set the new direction of the boid
         boidTransform.forward = direction;
-        //Set the new position of the boid
         position = boidTransform.position;
         forward = direction;
     }
@@ -145,7 +136,7 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
 
     Vector3 ObstacleDirections() {
         //An array of all the directions the boids can move (300)
-        Vector3[] rayDirections = BoidHelper.directions;
+        Vector3[] rayDirections = Helper.directions;
         //Iterate through all the directions
         for (int i = 0; i < rayDirections.Length; i++) {
             Vector3 dir = boidTransform.TransformDirection (rayDirections[i]);

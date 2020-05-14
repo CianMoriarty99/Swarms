@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [CreateAssetMenu()]
 
 /*
@@ -11,8 +10,8 @@ starting settings without creating 50 new instances of the class.
 For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
 */
 
-public class Settings : ScriptableObject {
-    // Boids Settings
+public class GannetSettings : ScriptableObject {
+    // FishBoids Settings
     public float minimumSpeed = 3f; 
     public float maximumSpeed = 8f;
     public float perceptionRadius = 2.5f; //How far boids can see other boids
@@ -27,7 +26,7 @@ public class Settings : ScriptableObject {
     public float targetWeight = 1;
 
     //These Variables are to do with collision between a boid and an obstacle
-    //Namely in Boids.cs IsHeadingForCollision() and ObstacleRays()
+    //Namely in FishBoids.cs IsHeadingForCollision() and ObstacleRays()
 
     //We give any obstacle that the boid wants to avoid a "LayerMask" which tells it that it is an obstacle
     public LayerMask obstacleMask;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Predators : MonoBehaviour {
+public class GannetBoids : MonoBehaviour {
 
 /*
 Each Predator (member of the swarm) will have this script attached to it
@@ -15,7 +15,7 @@ Settings is a "ScriptableObject" which allows each predator to obtain its
 starting psettings without creating 50 new instances of the class.
 For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
 */
-    PredatorSettings psettings;
+    GannetSettings psettings;
 
 //These are the values of the predator that update every frame
 
@@ -42,7 +42,7 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
     }
 
     //We can Initialize the predator with Settings from our Settings Script
-    public void Initialize (PredatorSettings psettings) {
+    public void Initialize (GannetSettings psettings) {
         this.psettings = psettings; //Get a new reference of the psettings just for this predator
         
         position = predatorTransform.position; //Initialize the start position
@@ -152,7 +152,7 @@ For more info: https://docs.unity3d.com/Manual/class-ScriptableObject.html
 
     Vector3 ObstacleDirections() {
         //An array of all the directions the predators can move (300)
-        Vector3[] rayDirections = PredatorHelper.directions;
+        Vector3[] rayDirections = Helper.directions;
         //Iterate through all the directions
         for (int i = 0; i < rayDirections.Length; i++) {
             Vector3 dir = predatorTransform.TransformDirection (rayDirections[i]);
